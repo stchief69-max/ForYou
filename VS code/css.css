@@ -1,0 +1,133 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  color: white;
+}
+
+/* Floating hearts */
+.heart {
+  position: fixed;
+  bottom: -50px;
+  animation: floatUp 5s linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+.container {
+  padding: 50px;
+}
+.container p {
+font-family: 'Courier New', Courier, monospace;
+}
+.container h1 {
+  font-family:Geneva, Verdana, sans-serif;
+}
+.container h2 {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+  font-size: 50px;
+  animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.btn {
+  padding: 15px 30px;
+  background: white;
+  color: #ff4b5c;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.hidden {
+  display: none;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* hidden before animation */
+.gallery img {
+  width: 150px;
+  border-radius: 15px;
+  opacity: 0;
+  transform: translateY(30px) scale(0.8);
+  transition: all 0.6s ease;
+}
+
+/* when active */
+.gallery img.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* hover effect */
+.gallery img:hover {
+  transform: scale(1.1) rotate(3deg);
+}
+
+/* Typing effect */
+#letter {
+  width: 70%;
+  margin: auto;
+  border-right: 3px solid white;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 5s steps(40), blink 0.7s infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 70% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+
+.letter-box {
+  width: 70%;
+  margin: 30px auto;
+  padding: 30px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+  font-size: 20px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* Soft fade in */
+.letter-box {
+  animation: fadeLetter 2s ease;
+}
+
+@keyframes fadeLetter {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
